@@ -1,7 +1,7 @@
 'use server';
 
 // Backendda /api prefiksi yo'qligi aniqlandi
-const BACKEND_URL = 'http://localhost:4000/api';
+const BACKEND_URL = 'http://api.laroma.akbar.works/api';
 
 export async function loginAction(initData: string) {
   try {
@@ -30,7 +30,7 @@ export async function updateProfileAction(userId: string, token: string, userDat
   try {
     const response = await fetch(`${BACKEND_URL}/users/${userId}`, {
       method: 'PATCH',
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },

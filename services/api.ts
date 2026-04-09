@@ -9,7 +9,7 @@ export const getImageUrl = (path: string | undefined) => {
 
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-  
+
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -20,7 +20,7 @@ export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   try {
     const url = `${BASE_URL}${endpoint}`;
     console.log(`[API] Fetching: ${url}`);
-    
+
     const response = await fetch(url, {
       ...options,
       headers,
@@ -45,7 +45,7 @@ export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
     if (contentType && contentType.includes('application/json')) {
       return await response.json();
     }
-    
+
     return await response.text();
   } catch (error: any) {
     console.error(`[API] Fetch Error [${endpoint}]:`, error.message || error);
