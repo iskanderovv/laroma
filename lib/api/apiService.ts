@@ -1,4 +1,6 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+import { API_URL } from './config';
+
+const API_BASE_URL = API_URL;
 
 export type ProfileContentKey = 'support' | 'delivery' | 'about';
 

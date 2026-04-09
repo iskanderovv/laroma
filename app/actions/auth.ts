@@ -1,7 +1,8 @@
 'use server';
 
-// Backendda /api prefiksi yo'qligi aniqlandi
-const BACKEND_URL = 'http://api.laroma.akbar.works/api';
+import { API_URL } from '@/lib/api/config';
+
+const BACKEND_URL = API_URL;
 
 export async function loginAction(initData: string) {
   try {

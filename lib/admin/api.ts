@@ -24,7 +24,7 @@ function getApiBaseUrl() {
     return `${backendUrl.replace(/\/$/, '')}/api`;
   }
 
-  return 'http://localhost:4000/api';
+  return 'https://api.laroma.akbar.works/api';
 }
 
 export class AdminApiError extends Error {
@@ -216,8 +216,8 @@ export const adminApi = {
     formData.append("file", file)
 
     const token = getAdminToken()
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000"
-    
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.laroma.akbar.works"
+
     return fetch(`${backendUrl}/api/uploads`, {
       method: "POST",
       headers: {

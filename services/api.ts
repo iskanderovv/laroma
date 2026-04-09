@@ -1,5 +1,6 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000';
+import { API_URL, BACKEND_URL } from "@/lib/api/config";
+
+const BASE_URL = API_URL;
 
 export const getImageUrl = (path: string | undefined) => {
   if (!path) return '';
