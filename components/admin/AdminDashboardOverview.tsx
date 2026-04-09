@@ -283,7 +283,7 @@ export default function AdminDashboardOverview() {
                   width={60}
                 />
                 <Tooltip 
-                  formatter={(value: number) => [`${formatCurrency(value)} so'm`, 'Tushum']}
+                  formatter={(value: any) => [`${formatCurrency(value || 0)} so'm`, 'Tushum']}
                   labelFormatter={(label) => `Sana: ${label}`}
                   contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                 />
@@ -327,10 +327,9 @@ export default function AdminDashboardOverview() {
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(value: number) => [`${value} ta mahsulot`, 'Soni']}
+                  formatter={(value: any) => [`${value || 0} ta mahsulot`, 'Soni']}
                   contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                />
-              </PieChart>
+                />              </PieChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
